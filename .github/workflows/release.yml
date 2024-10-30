@@ -1,3 +1,4 @@
+# Will run when a merge to main is done
 name: Release
 
 on:
@@ -10,6 +11,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: docker build . -t laithharden/nest-app
-      - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin
-      - run: docker push laithharden/nest-app
+      - run: docker build . -t ell1sandqvist/nest-app
+      - run: echo "${{secrets.DOCKER_HUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin
+      - run: docker push ell1sandqvist/nest-app
